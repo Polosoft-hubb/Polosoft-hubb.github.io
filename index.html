@@ -35,6 +35,7 @@
             position: relative;
             color: #fff;
             letter-spacing: 8px;
+            z-index: 10;
         }
 
         .color-layer {
@@ -48,21 +49,22 @@
             text-transform: uppercase;
             letter-spacing: 8px;
             opacity: 0;
+            z-index: 1;
         }
 
         .red-layer {
             color: #ff0000;
-            animation: red-glitch 3s infinite;
+            animation: glitch 3s infinite;
         }
 
         .blue-layer {
             color: #00ffff;
-            animation: blue-glitch 3s infinite;
+            animation: glitch 3s infinite 0.1s;
         }
 
         .yellow-layer {
             color: #ffff00;
-            animation: yellow-glitch 3s infinite;
+            animation: glitch 3s infinite 0.2s;
         }
 
         .tg-link {
@@ -73,6 +75,8 @@
             display: block;
             transition: all 0.3s ease;
             padding: 10px 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .tg-link:hover {
@@ -80,12 +84,20 @@
         }
 
         /* Анимации */
-        @keyframes red-glitch {
+        @keyframes glitch {
             0%, 100% {
                 opacity: 0;
                 transform: translate(0, 0);
             }
+            5% {
+                opacity: 1;
+                transform: translate(-8px, -4px);
+            }
             10% {
+                opacity: 1;
+                transform: translate(-12px, -6px);
+            }
+            15% {
                 opacity: 1;
                 transform: translate(-15px, -8px);
             }
@@ -97,67 +109,21 @@
                 opacity: 0;
                 transform: translate(0, 0);
             }
+            55% {
+                opacity: 1;
+                transform: translate(6px, 3px);
+            }
             60% {
                 opacity: 1;
-                transform: translate(-12px, -6px);
-            }
-            70% {
-                opacity: 0;
-                transform: translate(-12px, -6px);
-            }
-        }
-
-        @keyframes blue-glitch {
-            0%, 100% {
-                opacity: 0;
-                transform: translate(0, 0);
-            }
-            15% {
-                opacity: 1;
-                transform: translate(12px, 5px);
-            }
-            25% {
-                opacity: 0;
-                transform: translate(12px, 5px);
-            }
-            55% {
-                opacity: 0;
-                transform: translate(0, 0);
+                transform: translate(10px, 5px);
             }
             65% {
                 opacity: 1;
-                transform: translate(10px, 4px);
-            }
-            75% {
-                opacity: 0;
-                transform: translate(10px, 4px);
-            }
-        }
-
-        @keyframes yellow-glitch {
-            0%, 100% {
-                opacity: 0;
-                transform: translate(0, 0);
-            }
-            5% {
-                opacity: 1;
-                transform: translate(8px, -10px);
-            }
-            15% {
-                opacity: 0;
-                transform: translate(8px, -10px);
-            }
-            45% {
-                opacity: 0;
-                transform: translate(0, 0);
+                transform: translate(12px, 6px);
             }
             70% {
-                opacity: 1;
-                transform: translate(6px, -8px);
-            }
-            80% {
                 opacity: 0;
-                transform: translate(6px, -8px);
+                transform: translate(12px, 6px);
             }
         }
 
@@ -185,10 +151,10 @@
 
     <!-- Основной контент -->
     <div class="container">
-        <div class="glitch-text">POLO SOFT</div>
         <div class="color-layer red-layer">POLO SOFT</div>
         <div class="color-layer blue-layer">POLO SOFT</div>
         <div class="color-layer yellow-layer">POLO SOFT</div>
+        <div class="glitch-text">POLO SOFT</div>
         <a href="https://t.me/polo_softs2" class="tg-link" target="_blank">
             https://t.me/polo_softs2
         </a>
