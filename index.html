@@ -54,17 +54,17 @@
 
         .red-layer {
             color: #ff0000;
-            animation: glitch 3s infinite;
+            animation: glitch-red 3s infinite;
         }
 
         .blue-layer {
             color: #00ffff;
-            animation: glitch 3s infinite 0.1s;
+            animation: glitch-blue 3s infinite;
         }
 
         .yellow-layer {
             color: #ffff00;
-            animation: glitch 3s infinite 0.2s;
+            animation: glitch-yellow 3s infinite;
         }
 
         .tg-link {
@@ -83,47 +83,73 @@
             color: #00ffff;
         }
 
-        /* Анимации */
-        @keyframes glitch {
+        /* Анимации в разные стороны */
+        @keyframes glitch-red {
             0%, 100% {
                 opacity: 0;
                 transform: translate(0, 0);
             }
-            5% {
-                opacity: 1;
-                transform: translate(-8px, -4px);
-            }
             10% {
                 opacity: 1;
-                transform: translate(-12px, -6px);
-            }
-            15% {
-                opacity: 1;
-                transform: translate(-15px, -8px);
+                transform: translate(-15px, -10px);
             }
             20% {
                 opacity: 0;
-                transform: translate(-15px, -8px);
-            }
-            50% {
-                opacity: 0;
-                transform: translate(0, 0);
-            }
-            55% {
-                opacity: 1;
-                transform: translate(6px, 3px);
+                transform: translate(-15px, -10px);
             }
             60% {
                 opacity: 1;
-                transform: translate(10px, 5px);
-            }
-            65% {
-                opacity: 1;
-                transform: translate(12px, 6px);
+                transform: translate(-12px, -8px);
             }
             70% {
                 opacity: 0;
-                transform: translate(12px, 6px);
+                transform: translate(-12px, -8px);
+            }
+        }
+
+        @keyframes glitch-blue {
+            0%, 100% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            10% {
+                opacity: 1;
+                transform: translate(12px, 8px);
+            }
+            20% {
+                opacity: 0;
+                transform: translate(12px, 8px);
+            }
+            60% {
+                opacity: 1;
+                transform: translate(10px, 6px);
+            }
+            70% {
+                opacity: 0;
+                transform: translate(10px, 6px);
+            }
+        }
+
+        @keyframes glitch-yellow {
+            0%, 100% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            10% {
+                opacity: 1;
+                transform: translate(8px, -12px);
+            }
+            20% {
+                opacity: 0;
+                transform: translate(8px, -12px);
+            }
+            60% {
+                opacity: 1;
+                transform: translate(6px, -10px);
+            }
+            70% {
+                opacity: 0;
+                transform: translate(6px, -10px);
             }
         }
 
